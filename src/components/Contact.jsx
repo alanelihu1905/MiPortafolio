@@ -1,7 +1,7 @@
 import React from "react";
 
 const Contact = () => {
-  const email = "tu-correo@example.com";
+  const email = "al067108@uacam.mx";
 
   return (
     <section className="section section--contact" id="contact">
@@ -13,7 +13,7 @@ const Contact = () => {
         a todos los mensajes, especialmente si traen buenas vibes y código.
       </p>
       <a className="contact__button" href={`mailto:${email}`}>
-        ¡Saluda!
+        ¡Contáctame!
       </a>
     </section>
   );

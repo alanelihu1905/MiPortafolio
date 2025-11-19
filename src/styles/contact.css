@@ -1,0 +1,47 @@
+/* CONTACTO */
+
+.section--contact {
+  text-align: center;
+}
+
+.contact__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  margin-bottom: 0.4rem;
+}
+
+.contact__title {
+  margin: 0 0 1rem;
+  font-size: 1.9rem;
+}
+
+.contact__text {
+  max-width: 480px;
+  margin: 0 auto 2rem;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+}
+
+.contact__button {
+  display: inline-block;
+  padding: 0.8rem 2.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: transparent;
+  transition: transform 0.18s ease, background 0.18s ease,
+    box-shadow 0.18s ease;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
+}
+
+.contact__button:hover {
+  background: var(--color-accent-soft);
+  transform: translateY(-2px);
+}

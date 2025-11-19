@@ -6,11 +6,13 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import SocialBar from "./components/SocialBar";
+import CursorGlow from "./components/CursorGlow";
 
 const App = () => {
   return (
     <div className="app">
       <Navbar />
+      <CursorGlow />
       <SocialBar />
       <main>
         <section id="home">

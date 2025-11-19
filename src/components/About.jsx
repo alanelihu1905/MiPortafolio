@@ -21,10 +21,11 @@ const About = () => {
         <div className="section__line" />
       </div>
 
+      {/* solo el texto, sin columna de imagen */}
       <div className="about__content">
         <div className="about__text">
           <p>
-            Hola, soy <span className="accent">Tu Nombre</span>, estudiante de
+            Hola, soy <span className="accent">Alan Flores</span>, estudiante de
             ingeniería en tecnología de software. Me gusta aprender a
             programar, experimentar con nuevas ideas y construir proyectos que
             se sientan rápidos, claros y útiles.
@@ -46,10 +47,6 @@ const About = () => {
               </li>
             ))}
           </ul>
-        </div>
-
-        <div className="about__image-placeholder">
-          <div className="about__image-frame">Tu foto / avatar aquí</div>
         </div>
       </div>
     </section>

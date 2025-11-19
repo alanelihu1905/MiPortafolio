@@ -1,27 +1,23 @@
+// src/components/SocialBar.jsx
 import React from "react";
-
+import githubIcon from "../assets/gh-icon.png";
 const SocialBar = () => {
   return (
     <div className="social-bar social-bar--left">
       <ul>
         <li>
           <a
-            href="https://github.com/tu-usuario"
+            href="https://github.com/alanelihu1905"
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
+            className="icon-button"
           >
-            <i className="icon icon-github" />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/tu-perfil"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
-          >
-            <i className="icon icon-linkedin" />
+            <img
+              src={githubIcon}
+              alt="GitHub"
+              className="icon-button__img"
+            />
           </a>
         </li>
       </ul>

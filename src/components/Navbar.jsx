@@ -1,81 +1,99 @@
+// src/components/Navbar.jsx
 import React, { useState } from "react";
 
-const navLinks = [
-  { label: "01. Sobre mí", href: "#about" },
-  { label: "02. Proyectos", href: "#projects" },
-  { label: "03. Contacto", href: "#contact" },
-];
-
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  const handleNavClick = (href) => {
-    setIsOpen(false);
-    const section = document.querySelector(href);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+  const handleScroll = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth" });
+    setOpen(false);
   };
 
   return (
     <header className="navbar">
       <div className="navbar__inner">
-        <div className="navbar__logo" onClick={() => handleNavClick("#home")}>
-          <span>AC</span>
-        </div>
+        <button
+          className="navbar__logo"
+          onClick={() => handleScroll("hero")}
+          aria-label="Ir al inicio"
+        >
+          AFD
+        </button>
 
         <nav className="navbar__nav">
           <ul>
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <button
-                  className="navbar__link"
-                  onClick={() => handleNavClick(link.href)}
-                >
-                  <span className="navbar__link-index">
-                    {link.label.split(".")[0]}.
-                  </span>
-                  <span className="navbar__link-text">
-                    {link.label.split(". ")[1]}
-                  </span>
-                </button>
-              </li>
-            ))}
+            <li>
+              <button
+                className="navbar__link"
+                onClick={() => handleScroll("about")}
+              >
+                <span className="navbar__link-index">01.</span>
+                <span>Sobre mí</span>
+              </button>
+            </li>
+            <li>
+              <button
+                className="navbar__link"
+                onClick={() => handleScroll("projects")}
+              >
+                <span className="navbar__link-index">02.</span>
+                <span>Proyectos</span>
+              </button>
+            </li>
+            <li>
+              <button
+                className="navbar__link"
+                onClick={() => handleScroll("contact")}
+              >
+                <span className="navbar__link-index">03.</span>
+                <span>Contacto</span>
+              </button>
+            </li>
           </ul>
         </nav>
 
         <button
           className="navbar__burger"
-          onClick={() => setIsOpen((prev) => !prev)}
-          aria-label="Abrir menú de navegación"
+          onClick={() => setOpen((v) => !v)}
+          aria-label="Abrir menú"
         >
           <span />
           <span />
-          <span />
         </button>
-
-        {isOpen && (
-          <div className="navbar__mobile-menu">
-            <ul>
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <button
-                    className="navbar__mobile-link"
-                    onClick={() => handleNavClick(link.href)}
-                  >
-                    <span className="navbar__link-index">
-                      {link.label.split(".")[0]}.
-                    </span>
-                    <span className="navbar__link-text">
-                      {link.label.split(". ")[1]}
-                    </span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
       </div>
+
+      {open && (
+        <div className="navbar__mobile-menu">
+          <ul>
+            <li>
+              <button
+                className="navbar__mobile-link"
+                onClick={() => handleScroll("about")}
+              >
+                01. Sobre mí
+              </button>
+            </li>
+            <li>
+              <button
+                className="navbar__mobile-link"
+                onClick={() => handleScroll("projects")}
+              >
+                02. Proyectos
+              </button>
+            </li>
+            <li>
+              <button
+                className="navbar__mobile-link"
+                onClick={() => handleScroll("contact")}
+              >
+                03. Contacto
+              </button>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 };

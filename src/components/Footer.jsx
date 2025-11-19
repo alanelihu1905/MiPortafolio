@@ -4,10 +4,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <p className="footer__text">
-        Diseñado y construido por <span className="accent">Tu Nombre</span>.
-      </p>
-      <p className="footer__subtext">
-        Inspirado en el portafolio de Brittany Chiang.
+        Diseñado y construido por <span className="accent">Alan Flores</span>.
       </p>
     </footer>
   );

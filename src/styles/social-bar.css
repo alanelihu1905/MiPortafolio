@@ -1,0 +1,33 @@
+/* SOCIAL BAR – siempre abajo a la izquierda */
+
+.social-bar,
+.social-bar--left {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  right: auto;
+  top: auto;
+  transform: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  z-index: 50;
+}
+
+.social-bar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-bar li {
+  margin-bottom: 0.7rem;
+}
+
+.social-bar__line {
+  width: 1px;
+  height: 80px;
+  background-color: var(--color-text-muted);
+}

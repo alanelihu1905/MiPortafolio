@@ -1,5 +1,8 @@
+// src/components/Projects.jsx
 import React from "react";
 import { featuredProjects, otherProjects } from "../data/projects";
+import githubIcon from "../assets/gh-icon.png";
+import externalIcon from "../assets/link.png";
 
 const Projects = () => {
   return (
@@ -20,9 +23,17 @@ const Projects = () => {
             }`}
           >
             <div className="project-featured__image">
-              <div className="project-featured__image-placeholder">
-                Captura de {project.title}
-              </div>
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={`Captura del proyecto ${project.title}`}
+                  className="project-featured__img"
+                />
+              ) : (
+                <div className="project-featured__image-placeholder">
+                  Captura de {project.title}
+                </div>
+              )}
             </div>
 
             <div className="project-featured__content">
@@ -46,16 +57,26 @@ const Projects = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Ver código en GitHub"
+                  className="icon-button"
                 >
-                  <i className="icon icon-github" />
+                  <img
+                    src={githubIcon}
+                    alt="GitHub"
+                    className="icon-button__img"
+                  />
                 </a>
                 <a
                   href={project.demoUrl}
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Ver demo del proyecto"
+                  className="icon-button"
                 >
-                  <i className="icon icon-external-link" />
+                  <img
+                    src={externalIcon}
+                    alt="Demo"
+                    className="icon-button__img"
+                  />
                 </a>
               </div>
             </div>
@@ -68,23 +89,33 @@ const Projects = () => {
         {otherProjects.map((project) => (
           <article key={project.title} className="project-card">
             <div className="project-card__header">
-              <i className="icon icon-folder" />
+              <span className="project-card__icon-folder">📁</span>
               <div className="project-card__links">
                 <a
                   href={project.repoUrl}
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Ver código en GitHub"
+                  className="icon-button"
                 >
-                  <i className="icon icon-github" />
+                  <img
+                    src={githubIcon}
+                    alt="GitHub"
+                    className="icon-button__img"
+                  />
                 </a>
                 <a
                   href={project.demoUrl}
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Ver demo del proyecto"
+                  className="icon-button"
                 >
-                  <i className="icon icon-external-link" />
+                  <img
+                    src={externalIcon}
+                    alt="Demo"
+                    className="icon-button__img"
+                  />
                 </a>
               </div>
             </div>
